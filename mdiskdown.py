@@ -11,7 +11,7 @@ import mdisk
 import split
 
 BOT_USERNAME = os.environ.get("BOT_USERNAME", "MdiskDownloadersBot")
-BOT_NAME = os.environ.get("BOT_NAME", "Mdisk Downloader Bot")
+BOT_NAME = os.environ.get("BOT_NAME", "Mdisk Downloader Bot\n\n©️ @DKBOTZ And @DK_BOTZ")
 bot_token = os.environ.get("TOKEN", "5336784270:AAHLLAdyoCKLt5_XdV_Aj1UAqHLB5b_Li1g") 
 api_hash = os.environ.get("HASH", "db62aa57ef8162bb4c95d0cf81e1c09b") 
 api_id = os.environ.get("ID", "7651392") 
@@ -158,7 +158,7 @@ def down(v,a,message,link):
             os.remove(ele)
     else:
         app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠')
-        app.send_document(message.chat.id,document=file,caption=f"Uploaded By @{BOT_USERNAME}")
+        app.send_document(message.chat.id,document=file,caption=f"**Uploaded By @{BOT_USERNAME}**")
         os.remove(file)
 
 
