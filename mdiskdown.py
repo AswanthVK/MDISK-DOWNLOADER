@@ -220,7 +220,7 @@ def echo(client, message):
             ids = message.text.split(",")
             d = threading.Thread(target=lambda:down(ids[0],ids[1],message,link),daemon=True)
             d.start()
-            await down(ids[0],ids[1],message,link)
+            #await down(ids[0],ids[1],message,link)
         else:
             app.send_message(message.chat.id, "**First Send Me Link With /mdisk\n\nFor More Info Watch Below 👇 Turtorial Video**",
              reply_markup=InlineKeyboardMarkup(
