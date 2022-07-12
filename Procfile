@@ -1,1 +1,1 @@
-web: python3 mdiskdown.py
+worker: python3 mdiskdown.py
