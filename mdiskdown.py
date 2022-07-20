@@ -49,10 +49,10 @@ def down(v,a,message,link):
             #app.send_document(message.chat.id,document=ele,caption=f"part {i}")
             #i = i + 1
             #os.remove(ele)
-    try: #else: 
-        app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠')
-        app.send_document(message.chat.id,document=file,caption=f"**Uploaded By @{BOT_USERNAME}**")
-        os.remove(file)
+    #else: 
+    app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠')
+    app.send_document(message.chat.id,document=file,caption=f"**Uploaded By @{BOT_USERNAME}**")
+    os.remove(file)
 
 
 @app.on_message(filters.command(["mdisk"]))
