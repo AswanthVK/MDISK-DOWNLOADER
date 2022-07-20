@@ -128,34 +128,36 @@ def down(v,a,message,link):
      disable_web_page_preview=False,
  )
     file = mdisk.mdow(link,v,a,message)
-    size = split.get_path_size(file)
-    if(size > 2097151000):
+    #size = split.get_path_size(file)
+    #if(size > 2097151000):
+    if(file > 2097151000):
         app.send_message(message.chat.id, '𝗦𝗽𝗹𝗶𝘁𝗶𝗻𝗴')
-        flist = split.split_file(file,size,file,".", TG_SPLIT_SIZE)
-        os.remove(file)
-        app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠',
-         reply_markup=InlineKeyboardMarkup(
-             [
-                 [
-                     InlineKeyboardButton(
-                         "📹 Turtorial Video",
-                         url=f"https://youtu.be/VdONGctjnNk",
-                     )
-                 ],
-                 [
-                     InlineKeyboardButton(
-                         "✨ Support Group", url=f"https://t.me/DK_BOTZ"
-                     )
-                 ],
-             ]
-         ),
-         disable_web_page_preview=False,
-     )
-        i = 1
-        for ele in flist:
-            app.send_document(message.chat.id,document=ele,caption=f"part {i}")
-            i = i + 1
-            os.remove(ele)
+        return
+        #flist = split.split_file(file,size,file,".", TG_SPLIT_SIZE)
+        #os.remove(file)
+        #app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠',
+         #reply_markup=InlineKeyboardMarkup(
+             #[
+                 #[
+                     #InlineKeyboardButton(
+                         #"📹 Turtorial Video",
+                         #url=f"https://youtu.be/VdONGctjnNk",
+                     #)
+                 #],
+                 #[
+                     #InlineKeyboardButton(
+                         #"✨ Support Group", url=f"https://t.me/DK_BOTZ"
+                     #)
+                 #],
+             #]
+         #),
+         #disable_web_page_preview=False,
+     #)
+        #i = 1
+        #for ele in flist:
+            #app.send_document(message.chat.id,document=ele,caption=f"part {i}")
+            #i = i + 1
+            #os.remove(ele)
     else:
         app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠')
         app.send_document(message.chat.id,document=file,caption=f"**Uploaded By @{BOT_USERNAME}**\n\n©️ @DKBOTZ And @DK_BOTZ")
