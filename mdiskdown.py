@@ -130,9 +130,7 @@ def down(v,a,message,link):
     file = mdisk.mdow(link,v,a,message)
     #size = split.get_path_size(file)
     #if(size > 2097151000):
-    if(file > 2097151000):
-        app.send_message(message.chat.id, '𝗦𝗽𝗹𝗶𝘁𝗶𝗻𝗴')
-        return
+        #app.send_message(message.chat.id, '𝗦𝗽𝗹𝗶𝘁𝗶𝗻𝗴')
         #flist = split.split_file(file,size,file,".", TG_SPLIT_SIZE)
         #os.remove(file)
         #app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠',
@@ -158,7 +156,8 @@ def down(v,a,message,link):
             #app.send_document(message.chat.id,document=ele,caption=f"part {i}")
             #i = i + 1
             #os.remove(ele)
-    else:
+    #else:
+    try:
         app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠')
         app.send_document(message.chat.id,document=file,caption=f"**Uploaded By @{BOT_USERNAME}**\n\n©️ @DKBOTZ And @DK_BOTZ")
         os.remove(file)
