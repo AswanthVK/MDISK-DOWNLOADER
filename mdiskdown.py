@@ -52,8 +52,9 @@ def down(v,a,message,link):
             #i = i + 1
             #os.remove(ele)
     #else: 
+    new_file_name = file + "@NewBotz" + "." + "mkv"
     app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠')
-    app.send_document(message.chat.id,document=file)
+    app.send_document(message.chat.id,document=new_file_name)
     os.remove(file)
 
 
