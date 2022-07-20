@@ -38,20 +38,20 @@ def echo(client, message):
 def down(v,a,message,link):
     app.send_message(message.chat.id, '📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠....\n\n**Its Take Time Depend On Your File Size**')
     file = mdisk.mdow(link,v,a,message)
-    size = split.get_path_size(file)
-    if(size > 2097151000):
-        app.send_message(message.chat.id, '𝗦𝗽𝗹𝗶𝘁𝗶𝗻𝗴')
-        flist = split.split_file(file,size,file,".", TG_SPLIT_SIZE)
-        os.remove(file)
+    #size = split.get_path_size(file)
+    #if(size > 2097151000):
+        #app.send_message(message.chat.id, '𝗦𝗽𝗹𝗶𝘁𝗶𝗻𝗴')
+        #flist = split.split_file(file,size,file,".", TG_SPLIT_SIZE)
+        #os.remove(file)
+        #app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠')
+        #i = 1
+        #for ele in flist:
+            #app.send_document(message.chat.id,document=ele,caption=f"part {i}")
+            #i = i + 1
+            #os.remove(ele)
+    try: #else: 
         app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠')
-        i = 1
-        for ele in flist:
-            app.send_document(message.chat.id,document=ele,caption=f"part {i}")
-            i = i + 1
-            os.remove(ele)
-    else:
-        app.send_message(message.chat.id, '𝐔𝐩𝐥𝐨𝐚𝐝𝐢𝐧𝐠')
-        app.send_document(message.chat.id,document=file,caption=f"**Uploaded By @{BOT_USERNAME}**\n\n©️ @DKBOTZ And @DK_BOTZ")
+        app.send_document(message.chat.id,document=file,caption=f"**Uploaded By @{BOT_USERNAME}**")
         os.remove(file)
 
 
